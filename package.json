@@ -1,0 +1,30 @@
+{
+  "name": "crypto-id",
+  "version": "0.1.0",
+  "description": "Create a random id of any length with characters 0-9,A-Z,a-z using the browser's crypto.getRandomValues interface.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dabblewriter/crypto-id.git"
+  },
+  "keywords": [
+    "random",
+    "id",
+    "crypto",
+    "alphanumeric",
+    "getRandomValues"
+  ],
+  "author": "Jacob Wright",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dabblewriter/crypto-id/issues"
+  },
+  "homepage": "https://github.com/dabblewriter/crypto-id#readme",
+  "devDependencies": {
+    "typescript": "^4.8.2"
+  }
+}

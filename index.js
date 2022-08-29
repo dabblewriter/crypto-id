@@ -1,7 +1,7 @@
 const chars = ('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz').split('');
 let bytes = new Uint8Array(0);
 let position = 0;
-export function uuid(length = 24) {
+export function createId(length = 24) {
     let id = '';
     while (id.length < length) {
         if (position === bytes.length) {

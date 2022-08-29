@@ -1,1 +1,1 @@
-export declare function uuid(length?: number): string;
+export declare function createId(length?: number): string;

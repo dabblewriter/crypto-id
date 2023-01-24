@@ -1,7 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createId = void 0;
 const chars = ('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz').split('');
+const crypto = typeof globalThis.crypto !== 'undefined' && globalThis.crypto || module[`require`].bind(module)('node:crypto').webcrypto;
 let bytes = new Uint8Array(0);
 let position = 0;
-export function createId(length = 24) {
+function createId(length = 24) {
     let id = '';
     while (id.length < length) {
         if (position === bytes.length) {
@@ -22,3 +26,4 @@ export function createId(length = 24) {
     }
     return id;
 }
+exports.createId = createId;

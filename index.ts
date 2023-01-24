@@ -1,4 +1,5 @@
 const chars = ('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz').split('');
+const crypto = typeof globalThis.crypto !== 'undefined' && globalThis.crypto || module[`require`].bind(module)('node:crypto').webcrypto;
 
 let bytes = new Uint8Array(0);
 let position = 0;

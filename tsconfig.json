@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2021",
+    "target": "ES6",
     "declaration": true,
     "moduleResolution": "node",
+    "module": "CommonJS",
     "esModuleInterop": true,
     "allowJs": true,
     "allowSyntheticDefaultImports": true,

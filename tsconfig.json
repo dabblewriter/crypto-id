@@ -9,7 +9,7 @@
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
     "lib": [
-      "es2021", "DOM"
+      "es2021"
     ],
     "resolveJsonModule": true
   },

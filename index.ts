@@ -1,5 +1,6 @@
+declare var module: any;
 const chars = ('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz').split('');
-const crypto = typeof globalThis.crypto !== 'undefined' && globalThis.crypto || module[`require`].bind(module)('node:crypto').webcrypto;
+const crypto = typeof (globalThis as any).crypto !== 'undefined' && (globalThis as any).crypto || module['require']('node:crypto').webcrypto;
 
 let bytes = new Uint8Array(0);
 let position = 0;

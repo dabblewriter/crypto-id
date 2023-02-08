@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createId = void 0;
 const chars = ('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz').split('');
-const crypto = typeof globalThis.crypto !== 'undefined' && globalThis.crypto || module[`require`].bind(module)('node:crypto').webcrypto;
+const crypto = typeof globalThis.crypto !== 'undefined' && globalThis.crypto || module['require']('node:crypto').webcrypto;
 let bytes = new Uint8Array(0);
 let position = 0;
 function createId(length = 24) {

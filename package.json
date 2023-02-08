@@ -1,6 +1,6 @@
 {
   "name": "crypto-id",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Create a random id of any length with characters 0-9,A-Z,a-z using the browser's crypto.getRandomValues interface.",
   "main": "index.js",
   "scripts": {

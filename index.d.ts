@@ -1,1 +1,1 @@
-export declare function createId(length?: number): string;
+export { createId } from './browser';

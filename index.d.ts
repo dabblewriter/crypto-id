@@ -1,1 +1,1 @@
-export { createId } from './browser';
+export { createId, createSortableId } from './browser';

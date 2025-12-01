@@ -69,7 +69,7 @@ function createSortableId() {
     let randomPart;
     if (timestamp === lastTimestamp) {
         // Same millisecond - increment the random part for monotonicity
-        randomPart = incrementBase62(lastRandomPart);
+        randomPart = incrementBase62(lastRandomPart) || '';
         if (!randomPart) {
             // Extremely unlikely overflow - but better safe than sorry
             throw new Error('Sortable ID overflow: too many IDs generated in the same millisecond');

@@ -1,10 +1,11 @@
 {
   "name": "crypto-id",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Create a random id of any length with characters 0-9,A-Z,a-z using the browser's crypto.getRandomValues interface.",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "type:check": "tsc --noEmit",
     "test": "node test.js",
     "prepare": "tsc && npm test"
   },

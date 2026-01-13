@@ -19,6 +19,7 @@ let lastRandomPart = '';
  * ```typescript
  * createId();     // "RJPoz4veOGn9nbDI" (16 chars, ~4.7e28 possibilities)
  * createId(24);   // "RJPoz4veOGn9nbDILhmfga3n" (24 chars, ~1.04e43 possibilities)
+ * createId(22);   // "RJPoz4veOGn9nbDILhmfga3n" (22 chars, ~2.70e39 possibilities, a little better than a UUID)
  * createId(12);   // "GS7rPnA0mmbv" (~3.22e21 possibilities)
  * createId(4);    // "vMH6" (~14.7M possibilities)
  * ```
@@ -36,6 +37,7 @@ export function createId(length = 16) {
     }
     for (; position < bytes.length; position++) {
       const b = bytes[position];
+      if (b === undefined) continue;
       // Length of `chars` is 62. We only take bytes between 0 and 62*4-1 (both inclusive). The value is then evenly
       // mapped to indices of `chars` via a modulo operation.
       const maxValue = 62 * 4 - 1;
@@ -95,16 +97,24 @@ function incrementBase62(str: string): string | null {
 
   // Start from the right-most character and work backwards
   for (let i = arr.length - 1; i >= 0 && carry > 0; i--) {
-    const currentIndex = chars.indexOf(arr[i]);
+    const currentChar = arr[i];
+    if (currentChar === undefined) continue;
+    const currentIndex = chars.indexOf(currentChar);
     const newIndex = currentIndex + carry;
 
     if (newIndex < chars.length) {
       // No carry needed
-      arr[i] = chars[newIndex];
+      const newChar = chars[newIndex];
+      if (newChar !== undefined) {
+        arr[i] = newChar;
+      }
       carry = 0;
     } else {
       // Carry to next position
-      arr[i] = chars[0]; // Reset to '0'
+      const resetChar = chars[0];
+      if (resetChar !== undefined) {
+        arr[i] = resetChar; // Reset to '0'
+      }
       carry = 1;
     }
   }

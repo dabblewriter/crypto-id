@@ -11,6 +11,7 @@
  * ```typescript
  * createId();     // "RJPoz4veOGn9nbDI" (16 chars, ~4.7e28 possibilities)
  * createId(24);   // "RJPoz4veOGn9nbDILhmfga3n" (24 chars, ~1.04e43 possibilities)
+ * createId(22);   // "RJPoz4veOGn9nbDILhmfga3n" (22 chars, ~2.70e39 possibilities, a little better than a UUID)
  * createId(12);   // "GS7rPnA0mmbv" (~3.22e21 possibilities)
  * createId(4);    // "vMH6" (~14.7M possibilities)
  * ```
